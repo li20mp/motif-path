@@ -17,7 +17,7 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 ### Usage of Jar files 
 
 ## Competitors
-
+In this section, we introduce the usage of the competitors. For the competitors with codes released, you can refer the original introduction.
 ### Competitors with released codes
 - [Motif-Aware Graph Clustering (Tectonic)](https://github.com/tsourolampis/tectonic) 
 - [Local Higher-Order Graph Clustering (MAPPR)](http://snap.stanford.edu/mappr/)
@@ -26,16 +26,13 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 	- PageRank (PR) and Weighted PageRank (WPR) are implemmented in MPR.
 
 ### Competitors implemented by us
-#### Link Prediction
-- CN
-- JC
-- AA
-- PA
-- FM
-- HT
-- RPR
-- MCN
-- MLP+GB
-#### Clustering
-#### Node Ranking
-- DEG
+- Common Neighbors (CN)
+- Jaccard Coefficient (JC)
+- Adaminc/Adar (AA)
+- Preferential Attachment (PA)
+- Friends Measure (FM)
+- Hitting Time (HT)
+- Rooted PageRank (RPR)
+- Motif-based Common Neighbors (MCN)
+- Motif-based Link Prediction (MLP)
+- Degree based Node Ranking (DEG)
