@@ -16,8 +16,8 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 
 - Link Prediction
 - Clustering
--- [Tectonic](https://github.com/tsourolampis/tectonic) 
--- [MAPPR](http://snap.stanford.edu/mappr/)
--- [EdMot](https://github.com/benedekrozemberczki/EdMot) 
+- [Tectonic](https://github.com/tsourolampis/tectonic) 
+- [MAPPR](http://snap.stanford.edu/mappr/)
+- [EdMot](https://github.com/benedekrozemberczki/EdMot) 
 -Node Ranking
--- [MPR](https://github.com/HKUST-KnowComp/Motifbased-PageRank) 
+- [MPR](https://github.com/HKUST-KnowComp/Motifbased-PageRank) 
