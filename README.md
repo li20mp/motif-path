@@ -22,8 +22,8 @@ In this section, we introduce the usage of the competitors. For the competitors 
 - [Motif-Aware Graph Clustering (Tectonic)](https://github.com/tsourolampis/tectonic) 
 - [Local Higher-Order Graph Clustering (MAPPR)](http://snap.stanford.edu/mappr/)
 - [Edge Enhancement Motif Clustering (EdMot)](https://github.com/benedekrozemberczki/EdMot) 
-- [Motif PageRank based node ranking (MPR)](https://github.com/HKUST-KnowComp/Motifbased-PageRank) 
-	- PageRank (PR) 
+- [Motif PageRank based node ranking (MPR)](https://github.com/HKUST-KnowComp/Motif-based-PageRank) 
+	- PageRank (PR) is 
 	- Weighted PageRank (WPR)
 
 ### Competitors implemented by us
