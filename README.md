@@ -7,6 +7,10 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 
 - Anonymous during paper review
 
+### Settings and Dependencies.
+* [JavaSE-1.8.](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
+* [gs-core-1.3. (for visuilization part only)](http://graphstream-project.org/download/)
+
 ## Datasets
 
 ### Protein-protein Interacttion (PPI) Networks
@@ -23,8 +27,8 @@ In this section, we introduce the usage of the competitors. For the competitors 
 - [Local Higher-Order Graph Clustering (MAPPR)](http://snap.stanford.edu/mappr/)
 - [Edge Enhancement Motif Clustering (EdMot)](https://github.com/benedekrozemberczki/EdMot) 
 - [Motif PageRank based node ranking (MPR)](https://github.com/HKUST-KnowComp/Motif-based-PageRank) 
-	- PageRank (PR) is 
-	- Weighted PageRank (WPR)
+	- PageRank (PR) is integrated in MPR by setting alpha_value = 1. 
+	- Weighted PageRank (WPR) is integrated in MPR by setting alpha_value = 1 and remove line 216 of motif_construct_direct.py ("adjacency_matrix.data = np.ones((1, lennn), dtype=np.float64)[0]").
 
 ### Competitors implemented by us
 - Common Neighbors (CN)
