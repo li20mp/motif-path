@@ -19,11 +19,11 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 ## Competitors
 
 ### Competitors with released codes
-- [Tectonic](https://github.com/tsourolampis/tectonic) 
-- [MAPPR](http://snap.stanford.edu/mappr/)
-- [EdMot](https://github.com/benedekrozemberczki/EdMot) 
-- [MPR](https://github.com/HKUST-KnowComp/Motifbased-PageRank) 
-	- PR and WPR are implemmented in MPR.
+- [Motif-Aware Graph Clustering (Tectonic)](https://github.com/tsourolampis/tectonic) 
+- [Local Higher-Order Graph Clustering (MAPPR)](http://snap.stanford.edu/mappr/)
+- [Edge Enhancement Motif Clustering (EdMot)](https://github.com/benedekrozemberczki/EdMot) 
+- [Motif PageRank based node ranking (MPR)](https://github.com/HKUST-KnowComp/Motifbased-PageRank) 
+	- PageRank (PR) and Weighted PageRank (WPR) are implemmented in MPR.
 
 ### Competitors implemented by us
 #### Link Prediction
