@@ -14,8 +14,8 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 ## Datasets
 
 * The three protein-protein interaction (PPI) networks are within folder "./data/ppi/", named "ppi-gavin" (GAVI in the paper), "ppi-kcore" (KCOR in the paper) and "ppi-kextend" (EXTE in the paper). In each file, each line (except the first line) denotes an edge. The ground-truth communities are "ppi-gavin.sgd", "ppi-kcore.sgd" and "ppi-kextend.sgd" repectively, in which a line denotes a ground-truth community. Note that the three datasets are normalized. The raw datasets are from .
-* The two social networks are within folder "./data/social/", named "dblp" (DBLP in the paper) and "amazon" (AMAZ in the paper). The format is the same as ppi networks. The ground-truth communities are "dblp.gt" and "amazon.gt" repectively. The raw datasets come from .
-* The synthetic networks are within folder "./data/syn/", named "s1", "s2", "s3", "s4" and "s5".
+* The two social networks are within folder "./data/social/", named "dblp" (DBLP in the paper) and "amazon" (AMAZ in the paper). The format is same as ppi networks. The ground-truth communities are "dblp.gt" and "amazon.gt" repectively. The raw datasets come from .
+* The synthetic networks are within folder "./data/syn/", named "s1", "s2", "s3", "s4" and "s5". The format is same as ppi networks. The format is same as ppi networks.
  
 ## Codes
 ### Usage of Jar files 
