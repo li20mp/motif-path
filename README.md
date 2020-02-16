@@ -23,7 +23,7 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 #### Motif-path options
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
--m	The motif pattern:			Default is `5`.
+-m	The motif pattern:				Default is `5`.
 	  The supported motif ID is in the figure below.
 -s	The source node ID.				Default is `1`.
 -t	The target node ID.				Default is `2`.
