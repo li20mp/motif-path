@@ -22,10 +22,11 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 
 #### Motif-path options
 ```
--m	Edge list csv.	Default is `input/cora_edges.csv`.
--s	The source node ID.	Default is `1`.
--t	The target node ID.	Default is `2`.
--e	The defragmentation manner: 0 for non-defragmentation,	Default is `0`.
+-m	Edge list csv.		Default is `input/cora_edges.csv`.
+-s	The source node ID.		Default is `1`.
+-t	The target node ID.		Default is `2`.
+-e	The defragmentation manner:		Default is `0`.
+	0 for non-defragmentation,
 	1 for injecting bridging edges 
 	and 2 for injecting motif-clique edges.	
 ```
