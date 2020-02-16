@@ -22,14 +22,14 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 
 #### Motif-path options
 ```
--g	The path of the graph.				Default is `data/ppi/gavin`.
--m	The motif pattern (see the figure below).				Default is `m5`.
--s	The source node ID.			Default is `1`.
--t	The target node ID.			Default is `2`.
--e	The defragmentation manner:		Default is `0`.
-		0 for non-defragmentation,
-		1 for injecting bridging edges 
-		and 2 for injecting motif-clique edges.	
+-g	The path of the graph.						Default is `data/ppi/gavin`.
+-m	The motif pattern (see the figure below).	Default is `m5`.
+-s	The source node ID.							Default is `1`.
+-t	The target node ID.							Default is `2`.
+-e	The defragmentation manner:					Default is `1`.
+	  0 for non-defragmentation,
+	  1 for injecting bridging edges, 
+	  2 for injecting motif-clique edges.	
 ```
 <p align="center">
   <img width="800" src="motifs.PNG">
