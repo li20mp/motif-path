@@ -19,6 +19,10 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
  
 ## Codes
 ### Usage of Jar files 
+* mki.jar
+* mgd.jar
+* mlgc.jar
+* mnr.jar
 
 <p align="center">
   <img width="800" src="motifs.PNG">
