@@ -27,7 +27,7 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 	  The supported motif ID is in the figure below.
 -s	The source node ID.				Default is `1`.
 -t	The target node ID.				Default is `2`.
--e	The defragmentation manner:			Default is `1`.
+-d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
 	  2 for injecting motif-clique edges.	
@@ -36,7 +36,7 @@ The codes are included in the  `codes/` directory, which are compiled into `code
   <img width="800" src="motifs.PNG">
 </p>
 
-For example, the command `java -jar codes/mpath.jar -g:data/social/amazon -m:5 -`
+For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. To run `-d:1`, the bridging edges should be calculated beforehand, e.g., `data/ppi/gavin-m5.bedges`, by running `java -jar codes/mpath.jar -bedges data/ppi/gavin`.
 
 #### Motif-path based link prediction options
 ```             
