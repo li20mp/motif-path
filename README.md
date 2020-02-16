@@ -20,6 +20,10 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 ## Codes
 ### Usage of Jar files 
 
+<p align="center">
+  <img width="800" src="motifs.PNG">
+</p>
+
 ## Competitors
 In this section, we introduce the usage of the competitors. For the competitors with codes released, please refer the original introduction. For the competitors without codes released, we implemented them and integegrated them together with graph mining codes. Below please find their usages.
 ### Competitors with released codes
