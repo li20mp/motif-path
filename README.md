@@ -18,7 +18,7 @@ The code takes the **edge list** of the graph. Every row indicates an edge betwe
 * The synthetic networks are within folder `data/syn/`, named `s1`, `s2`, `s3`, `s4` and `s5`. The format is same as ppi networks. The format is same as ppi networks.
  
 ## Usage of Codes
-The codes are included in the  `codes/` directory, which are compiled into `codes/mpath.jar` and provide the following command line arguments.
+The codes are included in the  `codes/` directory, which are compiled into `codes/mpath.jar` and provide the following command line arguments. Note that the basic usage is 'java -jar codes/mpath.jar [option:value]'.
 
 #### Motif-path options
 ```
