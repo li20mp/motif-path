@@ -22,7 +22,8 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 
 #### Motif-path options
 ```
--m	Edge list csv.				Default is `input/cora_edges.csv`.
+-g	The path of the graph.				Default is `data/ppi/gavin`.
+-m	The motif pattern (see the figure below).				Default is `m5`.
 -s	The source node ID.			Default is `1`.
 -t	The target node ID.			Default is `2`.
 -e	The defragmentation manner:		Default is `0`.
