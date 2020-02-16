@@ -20,30 +20,29 @@ The code takes the **edge list** of the graph. Every row indicates an edge betwe
 ## Usage of Codes
 The codes are included in the  `codes/` directory, which are compiled into `codes/mpath.jar` and provide the following command line arguments.
 
-#### Input and output options
+#### Motif-path options
 ```
   --edge-path	Edge list csv.       Default is `input/cora_edges.csv`.
   --membership-path    Features json.       Default is `output/cora_membership.json`.
 ```
-#### Model options
+<p align="center">
+  <img width="800" src="motifs.PNG">
+</p>
+#### Motif-path based link prediction options
 ```             
   --cutoff       INT     Random seed.                   Default is 2.
   --components   INT     Number of motif components.    Default is 1.
 ```
-### Examples
+#### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
 ```sh
 $ python src/main.py
 ```
-
+#### Motif-path based node ranking options
 Increasing the motif graph component number.
 ```sh
 $ python src/main.py --components 2
 ```
-
-<p align="center">
-  <img width="800" src="motifs.PNG">
-</p>
 
 ## Competitors
 In this section, we introduce the usage of the competitors. For the competitors with codes released, please refer the original introduction. For the competitors without codes released, we implemented them and integegrated them together with graph mining codes. Below please find their usages.
