@@ -28,16 +28,19 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 <p align="center">
   <img width="800" src="motifs.PNG">
 </p>
+
 #### Motif-path based link prediction options
 ```             
   --cutoff       INT     Random seed.                   Default is 2.
   --components   INT     Number of motif components.    Default is 1.
 ```
+
 #### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
 ```sh
 $ python src/main.py
 ```
+
 #### Motif-path based node ranking options
 Increasing the motif graph component number.
 ```sh
