@@ -36,7 +36,7 @@ The codes are included in the  `codes/` directory, which are compiled into `code
   <img width="800" src="motifs.PNG">
 </p>
 
-For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. To run `-d:1`, the bridging edges should be calculated beforehand, e.g., `data/ppi/gavin-m5.bedges`, by running `java -jar codes/mpath.jar -bedges data/ppi/gavin`.
+For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. To run bridging-edge-based defragmentation `-d:1`, the bridging edges should be calculated beforehand, e.g., `data/ppi/gavin-m5.bedges`, by running `java -jar codes/mpath.jar -bedges data/ppi/gavin`. Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.cedges")` into function `_fill_blocks` of `src/edmot.py`.
 
 #### Motif-path based link prediction options
 ```             
