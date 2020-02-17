@@ -36,7 +36,7 @@ The codes are included in the  `codes/` directory, which are compiled into `code
   <img width="800" src="motifs.PNG">
 </p>
 
-For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. Both shortest motif-path and cprresponding shortest motif-sequence will be outputed.
+For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. Both shortest motif-path and corresponding shortest motif-sequence will be outputed. Note that a traditional shortest path will be calculated by using `-m:1`.
 
 #### Motif-graph defragmentation options	`codes/mpath.jar`
 ```             
