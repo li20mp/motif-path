@@ -20,7 +20,7 @@ The code takes the **edge list** of the graph. Every row indicates an edge betwe
 ## Usage of Codes
 The codes are included in the  `codes/` directory, which are compiled into `codes/mpath.jar` and provide the following command line arguments. Note that the basic usage is `java -jar codes/mpath.jar [option:value]`.
 
-#### Motif-path options
+#### Motif-path options	`codes/mpath.jar`
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
 -m	The motif pattern:				Default is `5`.
@@ -38,7 +38,7 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 
 For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. Both shortest motif-path and cprresponding shortest motif-sequence will be outputed.
 
-#### Motif-graph defragmentation options
+#### Motif-graph defragmentation options	`codes/mpath.jar`
 ```             
 -b	Calculate motif-components:			Default is `0`.
 	  0 for not running,
