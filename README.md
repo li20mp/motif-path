@@ -38,14 +38,21 @@ The codes are included in the  `codes/` directory, which are compiled into `code
 
 For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 -s:1 -t:100` will output a shortest motif-path between nodes (1,100) from AMAZ based on triangle and bridging-edge-based defragmentation. Both shortest motif-path and cprresponding shortest motif-sequence will be outputed.
 
+#### Motif-graph defragmentation options
+```             
+-b	Calculate motif-components:			Default is `0`.
+	  0 for not running,
+	  1 for running.
+```
 To run bridging-edge-based defragmentation `-d:1`, the motif-components should be calculated beforehand, e.g., `data/ppi/gavin-m5.mcom`, by running `java -jar codes/mpath.jar -b:1 -m:5 -g:data/ppi/gavin`. A file name `data/ppi/gavin-m5.mcom` will be generated with a line recording the motif-component ID of each node.
 
 Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.edmot")` into function `_fill_blocks` of `src/edmot.py`. [EdMot](https://github.com/benedekrozemberczki/EdMot) only supports triangle. A copy of `x.mcom` and `x.edmot` have been prepared in `data/` for each dataset `x`, except `data/social/dblp.edmot` and `data/social/amazon.edmot`, since EdMot cannot terminate in one day).
 
 #### Motif-path based link prediction options
 ```             
-  --cutoff       INT     Random seed.                   Default is 2.
-  --components   INT     Number of motif components.    Default is 1.
+-b	Calculate motif-components:			Default is `0`.
+	  0 for not running,
+	  1 for running.
 ```
 
 #### Motif-path based local graph clustering options
