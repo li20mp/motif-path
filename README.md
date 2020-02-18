@@ -11,7 +11,7 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 * [gs-core-1.3 (for visuilization part only).](http://graphstream-project.org/download/)
 
 ## Datasets
-The code takes the **edge list** of the graph. Every row indicates an edge between two nodes separated by a "\t". The first row is a header. Nodes should be indexed starting with 1. The datasets used in the paper are included in the  `data/` directory.
+The code takes the **edge list** of the graph. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 1. The datasets used in the paper are included in the  `data/` directory.
 
 * The three protein-protein interaction (PPI) networks are within folder `data/ppi/`, named `ppi-gavin` (GAVI in the paper), `ppi-kcore` (KCOR in the paper) and `ppi-kextend` (EXTE in the paper). In each file, each line (except the first line) denotes an edge. The ground-truth communities are `ppi-gavin.gt`, `ppi-kcore.gt` and `ppi-kextend.gt` repectively, in which a line denotes a ground-truth community.
 * The two social networks are within folder `data/social/`, named `dblp` (DBLP in the paper) and `amazon` (AMAZ in the paper). The format is same as ppi networks. The ground-truth communities are `dblp.gt` and `amazon.gt` repectively. The subgraphs of DBLP for node ranking, DBLP-1 and DBLP-2 are also included, named `dblp1` and `dblp2`. The two files `dblp1.nodes` and `dblp2.nodes` decsribe the information of author_names and H-Index values, where each line is in the format `node_id	author_name	H-Index`.
@@ -50,10 +50,11 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 
 #### Motif-path based link prediction options
 ```             
--b	Calculate motif-components:			Default is `0`.
+-q	Generate missing and nonexistent queries (x.linp):			Default is `0`.
 	  0 for not running,
 	  1 for running.
 ```
+To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file name `data/ppi/gavin.linkp` will be generated with a line recording the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number).
 
 #### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
