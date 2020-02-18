@@ -122,4 +122,8 @@ java -jar codes/linkp.jar -g:data/ppi/gavin -h -n:1000
 java -jar codes/linkp.jar -g:data/ppi/gavin -r -n:1000
 ```
 - Motif-based Link Prediction (MLP)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -l -n:1000
+```
+Note that the feature vectors can be usd for further training and testing, e.g., in python `ensemble.GradientBoostingRegressor`.
 - Degree based Node Ranking (DEG)
