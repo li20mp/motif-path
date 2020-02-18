@@ -170,7 +170,7 @@ public class Mpath {
 		}
 
 		
-		BufferedWriter b = new BufferedWriter(new FileWriter(dts.d.dataPath+"-m"+(pid)+".mcom"));
+		BufferedWriter b = new BufferedWriter(new FileWriter(dts.d.dataPath+"_m"+(pid)+".mcom"));
 		b.write("Components("+cComponentID+"):");
 		for(int i=1;i<=dts.g.nodeNum;i++) {
 			b.write(components[i]+",");

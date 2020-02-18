@@ -19,7 +19,7 @@ public class enhanced_motif_path extends motif_path{
 	
 	public void readInjectedEdges(Datasets dts, int pid) throws IOException{
 		injectedEdges = new ArrayList[dts.g.nodeNum+1];
-		BufferedReader a = new BufferedReader(new FileReader(dts.d.dataPath+"-m"+pid+".mcom"));
+		BufferedReader a = new BufferedReader(new FileReader(dts.d.dataPath+"_m"+pid+".mcom"));
 		int[]comps = new int[dts.g.nodeNum+1];
 		String[]tem = a.readLine().split(":")[1].split(",");
 		for(int i=1;i<comps.length;i++) {
