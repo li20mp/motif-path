@@ -55,7 +55,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 	  0 for not running,
 	  1 for running.
 ```
-To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file name `data/ppi/gavin.linkp` will be generated with a line recording the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). A copy of `x.linkp` for each dataset has been prepared in `data`.
+To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file name `data/ppi/gavin.linkp` will be generated where each line records the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). Note that the missing-links and the nonexistent-links follow the same shortest path distance distribution. A copy of `x.linkp` for each dataset has been prepared in `data`.
 
 #### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
