@@ -21,7 +21,7 @@ public class Localgc {
 	public static void main(String[]args) throws IOException{
 
 		String mainDir = "data/ppi/gavin";
-		int pid = 5, defragID = 0, k = 15, queryNum = 500;
+		int pid = 5, defragID = 0, k = 15, queryNum = 500, ssid = 1, sig = 0;
 		Interact nt = new Interact();
 		
 		for(int i=0;i<args.length;i++) {
@@ -33,6 +33,7 @@ public class Localgc {
 			case 'd': defragID = nt.intwarn(tem[1], defragID, 'd'); break;
 			case 'n': queryNum = nt.intwarn(tem[1], queryNum, 'n'); break;
 			case 'k': k = nt.intwarn(tem[1], k, 'k'); break;
+			case 's': ssid = nt.intwarn(tem[1], ssid, 's'); sig = 1; break;
 			}
 		}
 		
@@ -66,6 +67,20 @@ public class Localgc {
 		}
 		
 		BFS bfs = new BFS();
+		
+		if(sig==1) {
+			ArrayList<Integer>knn = null;
+			if(pid==1) {
+				knn = bfs.searchKNN(ssid,k,dts.g.graph);
+			}
+			if(pid==5) {
+				knn = emp.motif_path_early_stop(dts.g, pset, "", ssid, k);
+			}
+			System.out.println(knn.toString());
+			return;
+		}
+		
+		
 		Ground_truth ppi = new Ground_truth(dts.d.dataPath+".gt", ",");
 		
 		double[]pre = new double[queryNum], rec = new double[queryNum], f1 = new double[queryNum];
