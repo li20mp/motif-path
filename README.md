@@ -72,7 +72,7 @@ To run motif-path based link prediction, the query nodes of missing-links (posit
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
 	  2 for injecting motif-clique edges.	
--n	The number of queries.			Default is `500`.        
+-n	The number of queries.				Default is `500`.        
 -k	The value of k for NN search.			Default is `15`.
 -s	The source node ID.				Default is `1`.	   
 ```
@@ -88,10 +88,7 @@ Also, you can see the members of the cluster by inputing a specific query node `
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
 	  2 for injecting motif-clique edges.	
--k	The value of k for NDCG calculation.			Default is `15`.
--t	The metric to be applied:			Default is `0`.   
-	  0 for Graph Distance,
-	  1 for Katz Index.	  
+-k	The value of k for NDCG calculation.		Default is `15`.
 -b	Generate betweenness centrality scores for each node.
 ```
 For example, the command `java -jar codes/rank.jar -g:data/ppi/dblp1 -m:5 -d:1 -k:15` will output the NECG score and top-15 nodes in the ranking list by motif-path based betweenness centrality, with bridging-edge-based defragmentation and triangle as the motif pattern. Note that the relevance scores (e.g., H-index values) of each node should be put beside the graph, e.g., `data/social/dblp1.nodes` and `data/social/dblp2.nodes`, where line records the node ID, node name and its relevance score.
