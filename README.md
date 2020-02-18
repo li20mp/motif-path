@@ -54,7 +54,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
 	  2 for injecting motif-clique edges.	
--n	The number of iterations.			Default is `1000`.        
+-n	The number of iterations.			Default is `5000`.        
 -t	The metric to be applied:			Default is `0`.   
 	  0 for Graph Distance,
 	  1 for Katz Index.	  
@@ -62,7 +62,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 ```
 For example, the command `java -jar codes/linkp.jar -g:data/ppi/gavin -m:5 -t:1 -d:1` will output the triangle-path based link prediction results, with bridging-edge-based defragmentation and Katz Index as the link prediction metric.
 
-To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q -n:1000 -g:data/ppi/gavin`. A file named `data/ppi/gavin.linkp` will be generated where each line records the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). Note that the missing-links and the nonexistent-links follow the same shortest path distance distribution. A copy of `x.linkp` for each dataset has been prepared in `data`.
+To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q -n:5000 -g:data/ppi/gavin`. A file named `data/ppi/gavin.linkp` will be generated where each line records the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). Note that the missing-links and the nonexistent-links follow the same shortest path distance distribution. A copy of `x.linkp` for each dataset has been prepared in `data`.
 
 #### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
@@ -87,43 +87,43 @@ In this section, we introduce the usage of the competitors. For the competitors 
 	- Weighted PageRank (WPR) is integrated in MPR by setting alpha_value = 1 and remove line 216 of motif_construct_direct.py ("adjacency_matrix.data = np.ones((1, lennn), dtype=np.float64)[0]").
 
 ### Competitors implemented by us
-We implement the following competitors and integegrate them into our codes. To demonstrate the usage, we show the parameters with dataset gavin and 1000 interactions.
+We implement the following competitors and integegrate them into our codes. To demonstrate the usage, we show the parameters with dataset gavin and 5000 interactions.
 
 - Common Neighbors (CN)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -o -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -o -n:5000
 ```
 - Motif-based Common Neighbors (MCN)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -c -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -c -n:5000
 ```
 - Jaccard Coefficient (JC)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -j -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -j -n:5000
 ```
 - Adaminc/Adar (AA)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -a -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -a -n:5000
 ```
 - Preferential Attachment (PA)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -p -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -p -n:5000
 ```
 - Friends Measure (FM)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -f -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -f -n:5000
 ```
 - Hitting Time (HT)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -h -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -h -n:5000
 ```
 - Rooted PageRank (RPR)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -r -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -r -n:5000
 ```
 - Motif-based Link Prediction (MLP)
 ```
-java -jar codes/linkp.jar -g:data/ppi/gavin -l -n:1000
+java -jar codes/linkp.jar -g:data/ppi/gavin -l -n:5000
 ```
-Note that the feature vectors can be further usd for training and testing in different classifiers, e.g., `GradientBoostingRegressor` from `sklearn.ensemble` of python.
+After running the code, `gavin_posi_vec` and `gavin_nega_vec` will be generated, which record the motif based feature vectors of missing-links and nonexistent-links respectively. The feature vectors can be further usd for training and testing in different classifiers, e.g., `GradientBoostingRegressor` from `sklearn.ensemble` of python.
 - Degree based Node Ranking (DEG)
