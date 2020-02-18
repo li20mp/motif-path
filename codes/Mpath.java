@@ -8,6 +8,7 @@ import algo.motif_path;
 import tool.BFS;
 import tool.Dataset;
 import tool.Datasets;
+import tool.Interact;
 import tool.graphReady;
 
 public class Mpath {
@@ -16,16 +17,16 @@ public class Mpath {
 		
 		String mainDir = "data/ppi/gavin";
 		int s = 1, t = 2, pid = 5, defragID = 0, bid = 0;
-		
+		Interact nt = new Interact();
 		for(int i=0;i<args.length;i++) {
 			String[]tem=args[i].split(":");
 			char temc = tem[0].charAt(1);
 			switch(temc) {
 			case 'g': mainDir = args[i].substring(3); break;
-			case 's': s = Integer.parseInt(tem[1]); break;
-			case 't': t = Integer.parseInt(tem[1]); break;
-			case 'm': pid = Integer.parseInt(tem[1]); break;
-			case 'd': defragID = Integer.parseInt(tem[1]); break;
+			case 's': s = nt.intwarn(tem[1], s, 's'); break;
+			case 't': t = nt.intwarn(tem[1], t, 't'); break;
+			case 'm': pid = nt.intwarn(tem[1], pid, 'm'); break;
+			case 'd': nt.intwarn(tem[1], defragID, 'd'); break;
 			case 'b': bid = 1; break;
 			}
 		}

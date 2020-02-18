@@ -12,6 +12,7 @@ import link_prediction.arxiv19;
 import link_prediction.path_deal;
 import tool.Dataset;
 import tool.Datasets;
+import tool.Interact;
 import tool.graphReady;
 
 public class Linkp {
@@ -22,19 +23,19 @@ public class Linkp {
 		int pid = 5, defragID = 0, lid = 0, cid = 0, sid = 0, tid = 0, queryNum = 5000;
 		int tradition_metric_id = 0, tmetricID = 0;//cn, jc, pa, aa, fm
 		char metricID = 't';
-		
+		Interact nt = new Interact();
 		for(int i=0;i<args.length;i++) {
 			String[]tem=args[i].split(":");
 			char temc = tem[0].charAt(1);
 			switch(temc) {
 			case 'g': mainDir = args[i].substring(3); break;
-			case 'm': pid = Integer.parseInt(tem[1]); break;
-			case 'd': defragID = Integer.parseInt(tem[1]); break;
+			case 'm': pid = nt.intwarn(tem[1], pid, 'm'); break;
+			case 'd': defragID = nt.intwarn(tem[1], defragID, 'd'); break;
 			case 'l': lid = 1; break; //motif feature vector metric
-			case 'n': queryNum = Integer.parseInt(tem[1]); break;
+			case 'n': queryNum = nt.intwarn(tem[1], queryNum, 'n'); break;
 			case 'c': cid = 1; break; //motif common neighbor metric 
 			case 'q': sid = 1; break;
-			case 't': tid = Integer.parseInt(tem[1]); metricID = 't'; break; //path-based metric
+			case 't': tid = nt.intwarn(tem[1], tid, 't'); metricID = 't'; break; //path-based metric
 			case 'r': tid = 0; metricID = 'r'; break; //rooted pagerank metric
 			case 'h': tid = 0; metricID = 'h'; break; //hitting time metric
 			case 'o': tradition_metric_id = 1; tmetricID = 0; break; // cn
@@ -117,6 +118,7 @@ public class Linkp {
 		
 		
 	}
+
 	
 
 }
