@@ -51,7 +51,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 #### Motif-path based link prediction options
 ```
 -n	The number of iterations			Default is `1000`.        
--q	Generate missing and nonexistent queries:		Default is `0`.
+-q	Generate missing and nonexistent queries:	Default is `0`.
 	  0 for not running,
 	  1 for running.
 ```
