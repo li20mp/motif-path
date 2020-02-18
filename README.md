@@ -46,7 +46,7 @@ To run bridging-edge-based defragmentation `-d:1`, the motif-components should b
 
 Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.edmot")` into function `_fill_blocks` of `src/edmot.py`. [EdMot](https://github.com/benedekrozemberczki/EdMot) only supports triangle. A copy of `x.mcom` and `x.edmot` have been prepared in `data/` for each dataset `x`, except `data/social/dblp.edmot` and `data/social/amazon.edmot`, since EdMot cannot terminate in one day).
 
-#### Motif-path based link prediction options
+#### Motif-path based link prediction options	`codes/linkp.jar`
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
 -m	The motif pattern:				Default is `5`.
@@ -64,7 +64,7 @@ For example, the command `java -jar codes/linkp.jar -g:data/ppi/gavin -m:5 -t:1 
 
 To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q -n:5000 -g:data/ppi/gavin`. A file named `data/ppi/gavin.linkp` will be generated where each line records the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). Note that the missing-links and the nonexistent-links follow the same shortest path distance distribution. A copy of `x.linkp` for each dataset has been prepared in `data`.
 
-#### Motif-path based local graph clustering options
+#### Motif-path based local graph clustering options	`codes/localgc.jar`
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
 -m	The motif pattern:				Default is `5`.
@@ -80,7 +80,7 @@ For example, the command `java -jar codes/localgc.jar -g:data/ppi/gavin -m:5 -d:
 
 Also, you can see the members of the cluster by inputing a specific query node `s`, e.g., `java -jar codes/localgc.jar -g:data/ppi/gavin -m:5 -d:1 -k:100 -s:1`, which will output a local cluster around node `s`.
 
-#### Motif-path based node ranking options
+#### Motif-path based node ranking options	`codes/rank.jar`
 ```
 -g	The path of the graph.				Default is `data/social/dblp1`.
 -m	The motif pattern:				Default is `5`.
