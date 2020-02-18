@@ -44,7 +44,7 @@ For example, the command `java -jar codes/mpath.jar -g:data/ppi/gavin -m:5 -d:1 
 	  0 for not running,
 	  1 for running.
 ```
-To run bridging-edge-based defragmentation `-d:1`, the motif-components should be calculated beforehand, e.g., `data/ppi/gavin-m5.mcom`, by running `java -jar codes/mpath.jar -b:1 -m:5 -g:data/ppi/gavin`. A file name `data/ppi/gavin-m5.mcom` will be generated with a line recording the motif-component ID of each node.
+To run bridging-edge-based defragmentation `-d:1`, the motif-components should be calculated beforehand, e.g., `data/ppi/gavin-m5.mcom`, by running `java -jar codes/mpath.jar -b:1 -m:5 -g:data/ppi/gavin`. A file named `data/ppi/gavin-m5.mcom` will be generated with a line recording the motif-component ID of each node.
 
 Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.edmot")` into function `_fill_blocks` of `src/edmot.py`. [EdMot](https://github.com/benedekrozemberczki/EdMot) only supports triangle. A copy of `x.mcom` and `x.edmot` have been prepared in `data/` for each dataset `x`, except `data/social/dblp.edmot` and `data/social/amazon.edmot`, since EdMot cannot terminate in one day).
 
@@ -56,12 +56,17 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
 	  2 for injecting motif-clique edges.	
--n	The number of iterations			Default is `1000`.        
+-n	The number of iterations.			Default is `1000`.        
+-t	The metric to be applied:			Default is `0`.   
+	  0 for Graph Distance,
+	  1 for Katz Index.	  
 -q	Generate missing and nonexistent queries:	Default is `0`.
 	  0 for not running,
 	  1 for running.
 ```
-To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file name `data/ppi/gavin.linkp` will be generated where each line records the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). Note that the missing-links and the nonexistent-links follow the same shortest path distance distribution. A copy of `x.linkp` for each dataset has been prepared in `data`.
+For example, the command `java -jar codes/linkp.jar -g:data/ppi/gavin -m:5 -t:1 -d:1` will output the triangle-path based link prediction results, with bridging-edge-based defragmentation and Katz Index as the link prediction metric.
+
+To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file named `data/ppi/gavin.linkp` will be generated where each line records the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). Note that the missing-links and the nonexistent-links follow the same shortest path distance distribution. A copy of `x.linkp` for each dataset has been prepared in `data`.
 
 #### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
