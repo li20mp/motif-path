@@ -50,6 +50,12 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 
 #### Motif-path based link prediction options
 ```
+-g	The path of the graph.				Default is `data/ppi/gavin`.
+-m	The motif pattern:				Default is `5`.
+-d	The defragmentation manner:			Default is `0`.
+	  0 for non-defragmentation,
+	  1 for injecting bridging edges, 
+	  2 for injecting motif-clique edges.	
 -n	The number of iterations			Default is `1000`.        
 -q	Generate missing and nonexistent queries:	Default is `0`.
 	  0 for not running,
