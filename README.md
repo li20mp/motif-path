@@ -91,6 +91,8 @@ In this section, we introduce the usage of the competitors. For the competitors 
 	- Weighted PageRank (WPR) is integrated in MPR by setting alpha_value = 1 and remove line 216 of motif_construct_direct.py ("adjacency_matrix.data = np.ones((1, lennn), dtype=np.float64)[0]").
 
 ### Competitors implemented by us
+We implement the following competitors and integegrate them into our codes. To demonstrate the usage, we show the parameters with dataset gavin and 1000 interactions.
+
 - Common Neighbors (CN)
 ```
 java -jar codes/linkp.jar -g:data/ppi/gavin -o -n:1000
