@@ -93,6 +93,7 @@ In this section, we introduce the usage of the competitors. For the competitors 
 ### Competitors implemented by us
 - Common Neighbors (CN)
 		```java -jar codes/linkp.jar -g:data/ppi/gavin -o -n:1000```
+		
 - Motif-based Common Neighbors (MCN)
 - Jaccard Coefficient (JC)
 - Adaminc/Adar (AA)
