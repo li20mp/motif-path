@@ -95,13 +95,30 @@ In this section, we introduce the usage of the competitors. For the competitors 
 ```
 java -jar codes/linkp.jar -g:data/ppi/gavin -o -n:1000
 ```
-		
 - Motif-based Common Neighbors (MCN)
 - Jaccard Coefficient (JC)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -j -n:1000
+```
 - Adaminc/Adar (AA)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -a -n:1000
+```
 - Preferential Attachment (PA)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -p -n:1000
+```
 - Friends Measure (FM)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -f -n:1000
+```
 - Hitting Time (HT)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -h -n:1000
+```
 - Rooted PageRank (RPR)
+```
+java -jar codes/linkp.jar -g:data/ppi/gavin -r -n:1000
+```
 - Motif-based Link Prediction (MLP)
 - Degree based Node Ranking (DEG)
