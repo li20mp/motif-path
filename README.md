@@ -49,12 +49,13 @@ To run bridging-edge-based defragmentation `-d:1`, the motif-components should b
 Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.edmot")` into function `_fill_blocks` of `src/edmot.py`. [EdMot](https://github.com/benedekrozemberczki/EdMot) only supports triangle. A copy of `x.mcom` and `x.edmot` have been prepared in `data/` for each dataset `x`, except `data/social/dblp.edmot` and `data/social/amazon.edmot`, since EdMot cannot terminate in one day).
 
 #### Motif-path based link prediction options
-```             
--q	Generate missing and nonexistent queries (x.linp):			Default is `0`.
+```
+-n	The number of iterations			Default is `1000`.        
+-q	Generate missing and nonexistent queries:			Default is `0`.
 	  0 for not running,
 	  1 for running.
 ```
-To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file name `data/ppi/gavin.linkp` will be generated with a line recording the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number).
+To run motif-path based link prediction, the query nodes of missing-links (positive sampling) and nonexistent-links (negative sampling) should be sampled beforehand, e.g., `data/ppi/gavin.linkp`, by running `java -jar codes/linkp.jar -q:1 -n:1000 -g:data/ppi/gavin`. A file name `data/ppi/gavin.linkp` will be generated with a line recording the ID of missing-link nodes (the first and second number) and the ID of nonexistent-link nodes (the third and last number). A copy of `x.linkp` for each dataset has been prepared in `data`.
 
 #### Motif-path based local graph clustering options
 The following commands learn an EdMot Clustering.
