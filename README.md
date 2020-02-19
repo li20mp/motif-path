@@ -8,7 +8,6 @@ This repository contains codes and datasets used in [On Analysing Graphs with Mo
 
 ## Dependencies.
 * [JavaSE-1.8.](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
-* [gs-core-1.3 (for visuilization part only).](http://graphstream-project.org/download/)
 
 ## Datasets
 The code takes the **edge list** of the graph. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 1. The datasets used in the paper are included in the  `data/` directory.
