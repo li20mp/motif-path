@@ -1,4 +1,4 @@
-# motif-path
+# On Analysing Graphs with Motif-Paths
 
 This repository contains codes and datasets used in [On Analysing Graphs with Motif-Paths].
 
