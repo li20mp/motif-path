@@ -57,7 +57,6 @@ public class Graph_distance {
 			g.graph[ps].add(pt);
 			g.graph[pt].add(ps);
 			
-
 			//if (i == queryNums - 1)
 				System.out.print("m"+pstr+"after " + (i) + " iterations:\t");
 			for (int j = 0; j < methodsNum; j++) {
@@ -107,11 +106,15 @@ public class Graph_distance {
 			double spd = bfs.search(s, t, dts.g.graph);
 			if(spd>0)
 				spd = (double)1/spd;
+			
 			return spd;
 		}
 		
 		int[]pset = new int[1];
 		pset[0] = pid;
+		int sd = 5;
+		
+		if(defragID>0) {
 		emp.motif_path_enhanced(dts.g, pset, "", s, t);
 		
 		double res = 0;
@@ -120,6 +123,13 @@ public class Graph_distance {
 			return res;
 			}
 		
+		return res;
+		}
+		
+		motif_path mpf = new motif_path(dts.g, pset, "", s, t);
+		double res = 0;
+		if (mpf.SPD > 0 && mpf.SPD < sd)
+			res = (double) 1 / mpf.SPD;
 		return res;
 	}
 

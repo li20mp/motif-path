@@ -20,7 +20,7 @@ public class Linkp {
 	public static void main(String[] args) throws IOException {
 		
 		String mainDir = "data/ppi/gavin";
-		int pid = 5, defragID = 0, lid = 0, cid = 0, sid = 0, tid = 0, queryNum = 5000;
+		int pid = 5, defragID = 0, lid = 0, cid = 0, sid = 0, tid = 0, queryNum = 1000;
 		int tradition_metric_id = 0, tmetricID = 0;//cn, jc, pa, aa, fm
 		char metricID = 't';
 		Interact nt = new Interact();
