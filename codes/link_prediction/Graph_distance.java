@@ -100,19 +100,19 @@ public class Graph_distance {
 
 	private static double motif_path_graph_distance(int s, int t, Datasets dts, int queryNum, int defragID, int pid, enhanced_motif_path emp) throws IOException {
 		// input: pid in paper format
-		
+		int sd = 5;
 		if(pid==1) {
 			BFS bfs = new BFS ();
+			double res = 0;
 			double spd = bfs.search(s, t, dts.g.graph);
-			if(spd>0)
-				spd = (double)1/spd;
+			if(spd>0 && spd < sd)
+				res = (double)1/spd;
 			
-			return spd;
+			return res;
 		}
 		
 		int[]pset = new int[1];
 		pset[0] = pid;
-		int sd = 5;
 		
 		if(defragID>0) {
 		emp.motif_path_enhanced(dts.g, pset, "", s, t);
