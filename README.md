@@ -49,6 +49,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
 -m	The motif pattern:				Default is `5`.
+	  The supported motif ID is in the figure below.
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
