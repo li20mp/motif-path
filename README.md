@@ -49,7 +49,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
 -m	The motif pattern:				Default is `5`.
-	  The supported motif ID is in the figure below.
+	  The supported motif ID is in the figure above.
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
@@ -68,6 +68,7 @@ To run motif-path based link prediction, the query nodes of missing-links (posit
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
 -m	The motif pattern:				Default is `5`.
+	  The supported motif ID is in the figure above.
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
@@ -84,6 +85,7 @@ Also, you can see the members of the cluster by inputing a specific query node `
 ```
 -g	The path of the graph.				Default is `data/social/dblp1`.
 -m	The motif pattern:				Default is `5`.
+	  The supported motif ID is in the figure above.
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
