@@ -29,7 +29,12 @@ The codes are included in the  `codes/` directory, which are compiled into diffe
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
-	  2 for injecting motif-clique edges.	
+	  2 for injecting motif-clique edges.
+-c	The caching option:				Default is `0`.
+	  0 for non-caching,
+	  1 for 1-level caching,
+	  2 for 2-level caching,
+	  3 for 3-level caching.
 ```
 <p align="center">
   <img width="800" src="motifs.PNG">
