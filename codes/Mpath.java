@@ -3,6 +3,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import algo.Cache;
+import algo.CachedMotifPath;
+import algo.InsCached;
 import algo.enhanced_motif_path;
 import algo.motif_path;
 import tool.BFS;
@@ -16,7 +19,7 @@ public class Mpath {
 	public static void main(String[] args) throws IOException {
 		
 		String mainDir = "data/ppi/gavin";
-		int s = 1, t = 2, pid = 5, defragID = 0, bid = 0;
+		int s = 1, t = 2, pid = 5, defragID = 0, bid = 0, cid=0, cachedLevel = 0, oid=0;
 		Interact nt = new Interact();
 		for(int i=0;i<args.length;i++) {
 			String[]tem=args[i].split(":");
@@ -26,10 +29,15 @@ public class Mpath {
 			case 's': s = nt.intwarn(tem[1], s, 's'); break;
 			case 't': t = nt.intwarn(tem[1], t, 't'); break;
 			case 'm': pid = nt.intwarn(tem[1], pid, 'm'); break;
-			case 'd': nt.intwarn(tem[1], defragID, 'd'); break;
+			case 'd': defragID = nt.intwarn(tem[1], defragID, 'd'); break;
 			case 'b': bid = 1; break;
+			case 'c': cid = 1; cachedLevel = nt.intwarn(tem[1], cachedLevel, 'c'); break;
+			case 'o': oid = 1; cachedLevel = nt.intwarn(tem[1], cachedLevel, 'o'); break;
 			}
 		}
+		
+		if(cid==1&&cachedLevel==0)
+			cid = 0;
 		
 		if(defragID==2) {
 			//emp.readInjectedEdgesEdmot(dts);
@@ -67,6 +75,17 @@ public class Mpath {
 			return;
 		}
 		
+		if(oid==1) {
+			if(cachedLevel==0) {
+				System.out.println("Please use bigger caching level!");
+				return;
+			}
+			Cache ce = new Cache();
+			ce.buildMOD(dts, cachedLevel);
+			System.out.println("MOD-Index construction finished!");
+			return;
+		}
+		
 		if(pid==1) {
 			BFS bfs = new BFS();
 			ArrayList<Integer> sp = bfs.searchPath(s, t, g.graph);
@@ -81,9 +100,38 @@ public class Mpath {
 			return;
 		}
 		
+		if(cid == 1) {
+			//find motif-path with caching
+			CachedMotifPath cmp = new CachedMotifPath();
+			InsCached ic = new InsCached();
+			ic.loadCached(dts, cachedLevel);
+			System.out.println("Index loaded.");
+
+			enhanced_motif_path emp = new enhanced_motif_path();
+			ArrayList<Integer>[]injectedEdges = null;
+			
+			if(defragID==1)
+				injectedEdges = emp.readInjectedEdges(dts, pid);
+			if(defragID==2)
+				injectedEdges = emp.readInjectedEdgesEdmot(dts);
+			
+			int enhanceSig = 0;
+			if(defragID>0)
+				enhanceSig = 1;
+			cmp.smpOResmpST(dts, pid, enhanceSig, cachedLevel, ic, emp, injectedEdges, s, t);
+			
+			return;
+		}
+		
 		enhanced_motif_path emp = new enhanced_motif_path();
 		if(defragID==1)
 			emp.readInjectedEdges(dts, pid);
+		if(emp.comps[s] == emp.comps[t]) {
+			int[]pset = new int[1];
+			pset[0] = pid;
+			motif_path mp = new motif_path(g,pset,"",s,t);
+			return;
+		}
 		
 		outputEmp(pid, emp, g, s, t, defragID);
 	}
@@ -95,7 +143,7 @@ public class Mpath {
 		pset[0] = pid;
 		int spd = emp.motif_path_enhanced(g, pset, "", s, t);
 		
-		System.out.println("Motif-sequence:");
+		System.out.println("Motif-path:");
 		ArrayList<Integer>motif_path = new ArrayList();
 		motif_path.add(s);
 		for(int i=emp.motif_sequense.size()-1;i>=0;i--) {
@@ -114,12 +162,12 @@ public class Mpath {
 			
 		}
 		motif_path.add(t);
-		System.out.println("Motif-path:");
+		//System.out.println("Motif-path:");
 		for(int i=0;i<motif_path.size();i++) {
-			if(i<motif_path.size()-1)
-				System.out.print(motif_path.get(i)+"->");
-			else
-				System.out.println(motif_path.get(i));
+			//if(i<motif_path.size()-1)
+			//	System.out.print(motif_path.get(i)+"->");
+			//else
+				//System.out.println(motif_path.get(i));
 		}
 		
 		System.out.print("\nShortest motif-path distance (motif m"+pid+") between "+s+" and "+t+" is "+spd+", ");

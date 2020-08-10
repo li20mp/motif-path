@@ -9,17 +9,19 @@ import tool.Datasets;
 
 public class Cache {
 
-	static boolean cacheSig = false;
-	static boolean cacheSig2 = false;
-	static boolean cacheSig3 = false;
-	static int counter = 0, counter1 = 0, counter2 = 0, counter3 = 0;
-	public static void main(String[] args) throws IOException {
-		String mainDir = "./";
-		Datasets dts = new Datasets(mainDir); 
-		dts.Initialize(32);
-		// change the dataset here
+	boolean cacheSig = false;// for first level motifs
+	boolean cacheSig2 = false;// for second level motifs
+	boolean cacheSig3 = false;// for third level motifs
+	int counter = 0, counter1 = 0, counter2 = 0, counter3 = 0;
+
+	public void buildMOD(Datasets dts, int level) throws IOException {
+		if(level == 2)
+			cacheSig2 = true;
+		if(level == 3) {
+			cacheSig2 = true;
+			cacheSig3 = true;
+		}
 		long t1 = System.currentTimeMillis();
-		
 		String str = dts.d.dataPath;
 		if(!cacheSig&&!cacheSig2&&!cacheSig3)
 			str += ".cache";
@@ -339,7 +341,7 @@ public class Cache {
 		b.close();
 	}
 	
-	static void f4(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
+	void f4(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
 		if(!cacheSig) return;
 		for(int q=p+1; q<graph[i].size();q++) {
 			int nei4 = graph[i].get(q);
@@ -384,7 +386,7 @@ public class Cache {
 			}
 	}
 	
-	static void f22(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
+	void f22(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
 		
 		if(!cacheSig) {
 			for(int q=p+1; q<graph[i].size();q++) {
@@ -444,7 +446,7 @@ public class Cache {
 		}
 	}
 	
-	static void f16(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
+	void f16(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
 		if(!cacheSig) return;
 		
 		for(int q=p+1; q<graph[i].size();q++) {
@@ -515,7 +517,7 @@ public class Cache {
 		}
 	}
 	
-	static void f9(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
+	void f9(int i, int nei1, int nei2, int nei3, ArrayList<Integer>[]graph, BufferedWriter b, int p) throws IOException {
 		if(!cacheSig) return;
 		for(int q=p+1; q<graph[i].size();q++) {
 			int nei4 = graph[i].get(q);
