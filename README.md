@@ -50,6 +50,12 @@ To run bridging-edge-based defragmentation `-d:1`, the motif-components should b
 
 Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.edmot")` into function `_fill_blocks` of `src/edmot.py`. [EdMot](https://github.com/benedekrozemberczki/EdMot) only supports triangle. A copy of `x.mcom` and `x.edmot` have been prepared in `data/` for each dataset `x`, except `data/social/dblp.edmot` and `data/social/amazon.edmot`, since EdMot cannot terminate in one day.
 
+#### MOD-Indexing options	`codes/mpath.jar`
+```             
+-o	Build the MOD-Index.
+```
+To search motif-path with caching `-c:i` (i>0), the MOD-Index should be constructed beforehand, e.g., `data/ppi/gavin.cache`, by running `java -jar codes/mpath.jar -o -m:5 -g:data/ppi/gavin`. A file named `data/ppi/gavin.cache` will be generated according to the format described in the paper. A copy of `x.cache` is prepared for each dataset on 1-level caching.
+
 #### Motif-path based link prediction options	`codes/linkp.jar`
 ```
 -g	The path of the graph.				Default is `data/ppi/gavin`.
