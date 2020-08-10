@@ -29,7 +29,12 @@ The codes are included in the  `codes/` directory, which are compiled into diffe
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
-	  2 for injecting motif-clique edges.	
+	  2 for injecting motif-clique edges.
+-c	The caching option:				Default is `0`.
+	  0 for non-caching,
+	  1 for 1-level caching,
+	  2 for 2-level caching,
+	  3 for 3-level caching.
 ```
 <p align="center">
   <img width="800" src="motifs.PNG">
@@ -44,6 +49,16 @@ For example, the command `java -jar codes/mpath.jar -g:data/social/amazon -m:5 -
 To run bridging-edge-based defragmentation `-d:1`, the motif-components should be calculated beforehand, e.g., `data/ppi/gavin-m5.mcom`, by running `java -jar codes/mpath.jar -b -m:5 -g:data/ppi/gavin`. A file named `data/ppi/gavin-m5.mcom` will be generated with a line recording the motif-component ID of each node.
 
 Similarly, before running `-d:2`, you need to run the codes from [EdMot](https://github.com/benedekrozemberczki/EdMot), and get the enhanced motif-graph by adding `nx.write_edgelist(self.graph, "gavin.edmot")` into function `_fill_blocks` of `src/edmot.py`. [EdMot](https://github.com/benedekrozemberczki/EdMot) only supports triangle. A copy of `x.mcom` and `x.edmot` have been prepared in `data/` for each dataset `x`, except `data/social/dblp.edmot` and `data/social/amazon.edmot`, since EdMot cannot terminate in one day.
+
+#### MOD-Indexing options	`codes/mpath.jar`
+```             
+-o	Build the MOD-Index.				Default is `1`.
+	  0 for non-caching,
+	  1 for 1-level caching,
+	  2 for 2-level caching,
+	  3 for 3-level caching.
+```
+To search motif-path with caching `-c:i` (i>0), the MOD-Index should be constructed beforehand, e.g., `data/ppi/gavin.cache`, by running `java -jar codes/mpath.jar -o -g:data/ppi/gavin`. A file named `data/ppi/gavin.cache` will be generated according to the format described in the paper. A copy of `x.cache` is prepared for each dataset on 1-level caching. Note that some caching files need to be decompressed because of the file-size-limitation of github (100MB).
 
 #### Motif-path based link prediction options	`codes/linkp.jar`
 ```
