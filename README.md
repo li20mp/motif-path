@@ -52,7 +52,11 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 
 #### MOD-Indexing options	`codes/mpath.jar`
 ```             
--o	Build the MOD-Index.
+-o	Build the MOD-Index.				Default is `0`.
+	  0 for non-caching,
+	  1 for 1-level caching,
+	  2 for 2-level caching,
+	  3 for 3-level caching.
 ```
 To search motif-path with caching `-c:i` (i>0), the MOD-Index should be constructed beforehand, e.g., `data/ppi/gavin.cache`, by running `java -jar codes/mpath.jar -o -g:data/ppi/gavin`. A file named `data/ppi/gavin.cache` will be generated according to the format described in the paper. A copy of `x.cache` is prepared for each dataset on 1-level caching. Note that some caching files need to be decompressed because of the file-size-limitation of github (100MB).
 
