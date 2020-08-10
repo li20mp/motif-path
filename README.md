@@ -54,7 +54,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 ```             
 -o	Build the MOD-Index.
 ```
-To search motif-path with caching `-c:i` (i>0), the MOD-Index should be constructed beforehand, e.g., `data/ppi/gavin.cache`, by running `java -jar codes/mpath.jar -o -m:5 -g:data/ppi/gavin`. A file named `data/ppi/gavin.cache` will be generated according to the format described in the paper. A copy of `x.cache` is prepared for each dataset on 1-level caching.
+To search motif-path with caching `-c:i` (i>0), the MOD-Index should be constructed beforehand, e.g., `data/ppi/gavin.cache`, by running `java -jar codes/mpath.jar -o -g:data/ppi/gavin`. A file named `data/ppi/gavin.cache` will be generated according to the format described in the paper. A copy of `x.cache` is prepared for each dataset on 1-level caching. Note that some caching files need to be uncompressed because of the file-size-limitation of github (100MB).
 
 #### Motif-path based link prediction options	`codes/linkp.jar`
 ```
