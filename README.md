@@ -52,7 +52,7 @@ Similarly, before running `-d:2`, you need to run the codes from [EdMot](https:/
 
 #### MOD-Indexing options	`codes/mpath.jar`
 ```             
--o	Build the MOD-Index.				Default is `0`.
+-o	Build the MOD-Index.				Default is `1`.
 	  0 for non-caching,
 	  1 for 1-level caching,
 	  2 for 2-level caching,
