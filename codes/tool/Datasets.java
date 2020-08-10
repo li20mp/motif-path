@@ -9,8 +9,14 @@ public class Datasets {
 	public Dataset ds[] = null;
 	public graphReady g = null;
 	String mainDir = null;
-
 	public Dataset d;
+	
+	public Datasets(String md) throws IOException {
+		mainDir = md;
+		//ds = new Dataset[100];
+		//list the datasets here
+	}
+	
 	public String Initialize(int id) throws IOException {
 		g = new graphReady();
 		d = ds[id];
