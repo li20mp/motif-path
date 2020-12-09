@@ -17,7 +17,7 @@ The code takes the **edge list** of the graph. Every row indicates an edge betwe
 * The synthetic networks are within folder `data/syn/`, named `s1`, `s2`, `s3`, `s4` and `s5`. The format is same as ppi networks. 
  
 ## Usage of Codes
-The codes are included in the  `codes/` directory, which are compiled into different jar files. For example, `codes/mpath.jar` provides the following command line arguments, with the basic usage as `java -jar codes/mpath.jar [option:value]`.
+The codes are included in the  `codes/` directory, which are compiled into different jar files. For example, `codes/mpath.jar` provides the following command line arguments, with the basic usage as `java -jar codes/mpath.jar [option:value]`. You may try `git clone https://github.com/li20mp/motif-path` to download the files.
 
 #### Motif-path options	`codes/mpath.jar`
 ```
@@ -29,7 +29,8 @@ The codes are included in the  `codes/` directory, which are compiled into diffe
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
-	  2 for injecting motif-clique edges.
+	  2 for injecting motif-clique edges,
+	  3 for injecting briding rectangles.
 -c	The caching option:				Default is `0`.
 	  0 for non-caching,
 	  1 for 1-level caching,
@@ -68,7 +69,8 @@ To search motif-path with caching `-c:i` (i>0), the MOD-Index should be construc
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
-	  2 for injecting motif-clique edges.	
+	  2 for injecting motif-clique edges,
+      3 for injecting briding rectangles.	  
 -n	The number of iterations.			Default is `1000`.        
 -t	The metric to be applied:			Default is `0`.   
 	  0 for Graph Distance,
@@ -87,7 +89,8 @@ To run motif-path based link prediction, the query nodes of missing-links (posit
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
-	  2 for injecting motif-clique edges.	
+	  2 for injecting motif-clique edges,
+      3 for injecting briding rectangles.	  
 -n	The number of queries.				Default is `500`.        
 -k	The value of k for NN search.			Default is `15`.
 -s	The source node ID.				Default is `1`.	   
@@ -104,7 +107,8 @@ Also, you can see the members of the cluster by inputing a specific query node `
 -d	The defragmentation manner:			Default is `0`.
 	  0 for non-defragmentation,
 	  1 for injecting bridging edges, 
-	  2 for injecting motif-clique edges.	
+	  2 for injecting motif-clique edges,
+      3 for injecting briding rectangles.	  
 -k	The value of k for NDCG calculation.		Default is `15`.
 -b	Generate betweenness centrality scores for each node.
 ```
