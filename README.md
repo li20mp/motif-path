@@ -167,8 +167,9 @@ java -jar codes/linkp.jar -g:data/ppi/gavin -l -n:1000
 ```
 After running the code, `gavin_posi_vec` and `gavin_nega_vec` will be generated, which record the motif based feature vectors of missing-links and nonexistent-links respectively. The feature vectors can be further used for training and testing in different classifiers, e.g., `GradientBoostingRegressor` from `sklearn.ensemble` of python.
 
-[//]: # (- Degree based Node Ranking (DEG)
-```
-java -jar codes/rank.jar -g:data/social/dblp1 -n -k:15
-```)
+
+[//]: # (- Degree based Node Ranking (DEG))
+[//]: # (```)
+[//]: # (java -jar codes/rank.jar -g:data/social/dblp1 -n -k:15)
+[//]: # (```)
 
