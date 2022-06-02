@@ -353,8 +353,21 @@ public class graphReady {
 		HashSet<String> h = new HashSet<String>();
 		BufferedReader a = new BufferedReader(new FileReader(s));
 
-		for (int i = 0; i < uselessLines; i++)
-			a.readLine();
+		for (int i = 0; i < uselessLines; i++){
+			String str = a.readLine();
+			if(str.contains("um")) {
+				//nodenum: x	edgenum: y
+				String[]tem = str.split("	");
+				if(tem[i].contains(":")) {
+					edgeNum = Integer.parseInt(tem[1].split(":")[1].replace(" ", ""));
+					return Integer.parseInt(tem[0].split(":")[1].replace(" ", ""));
+				}else {
+					edgeNum = Integer.parseInt(tem[1].replace(" ", ""));
+					return Integer.parseInt(tem[0].replace(" ", ""));
+				}
+				
+			}			
+		}
 		String[] tem = null;
 		String sa = a.readLine();
 		edgeNum = 0;
